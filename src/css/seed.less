@@ -24,7 +24,7 @@
 
     .header {
       display: inline-block;
-      padding: 1em;
+      padding: 1em 0.8em;
       border-left: 1px solid #ddd;
       margin-right: -5px;
 
@@ -37,6 +37,13 @@
     .header:first-child {
       border-left: none;
     }
+    .header:last-child {
+      border-right: none;
+      @media @mobile {
+        border-right: 1px solid #ddd;
+      }
+
+      }
   }
 
   #tabCon {
@@ -55,6 +62,7 @@
         font-size: 1.1em;
         margin-bottom: 8px;
         line-height: 1.1em;
+        margin-left: -1em;
       }
 
       .answer {
@@ -89,4 +97,18 @@
 .iframe {
   max-width: 400px;
   margin: auto;
+}
+
+.mobile {
+  display: none;
+  @media @mobile {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+  @media @mobile {
+    display: none;
+  }
 }

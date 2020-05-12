@@ -15,19 +15,21 @@
     <responsive-child>
 
 
-     <div class="main">
+     <div class="main interactive">
        <h3 class="graphic-hed">
           What are school districts doing during the closures?
        </h3>
         <h4 class="graphic-chatter">Every week, the state education department surveys school districts on the services
-          they’re providing while school buildings are closed. While the majority of school systems managed to quickly
-          provide food to families, other challenges, such as getting Wi-Fi access to students, have been slow going.
-          From remote learning to child care, here is what they’re reported so far.</h4>
+          they’re providing while school buildings are closed. While most school systems managed to quickly
+          provide food to families, they have been slower to respond to other challenges, such as getting Wi-Fi access to students.
+          From remote learning to child care, here is what they've reported so far.
+          <br><i>Please note that the state changes which services it asks about every week, and not every district responds to each question.</i></h4>
 
-        <h4 class="graphic-chatter"><i>We’ll be updating this graphic monthly.</i></h4>
+        <h4 class="graphic-chatter"><i>We'll update this graphic monthly.</i></h4>
 
        <div class="box">
          <div class="headerTabs">
+           <div class="header" id="overview">Overview</div>
            <div class="header" id="child">Child Care</div>
            <div class="header" id="meals">Meals</div>
            <div class="header" id="learning">Remote Learning</div>
@@ -35,6 +37,7 @@
          </div>
 
          <div id="tabCon">
+           <div class="tab" id="overviewDiv"><%= t.include("partials/_overview.html") %></div>
            <div class="tab" id="childDiv"><%= t.include("partials/_child.html") %></div>
            <div class="tab" id="mealsDiv"><%= t.include("partials/_meals.html") %></div>
            <div class="tab" id="techDiv"><%= t.include("partials/_tech.html") %></div>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+
+
+     <div class="main">
+       <h3 class="graphic-hed">
+          What are school districts doing during the closures?
+       </h3>
+        <h4 class="graphic-chatter">Every week, the state education department surveys school districts on the services
+          they’re providing while school buildings are closed. While the majority of school systems managed to quickly
+          provide food to families, other challenges, such as getting Wi-Fi access to students, have been slow going.
+          From remote learning to child care, here is what they’re reported so far.</h4>
+
+        <h4 class="graphic-chatter"><i>We’ll be updating this graphic monthly.</i></h4>
+
+       <div class="box">
+         <div class="headerTabs">
+           <div class="header" id="child">Child Care</div>
+           <div class="header" id="meals">Meals</div>
+           <div class="header" id="learning">Remote Learning</div>
+           <div class="header" id="tech">Technology</div>
+         </div>
+
+         <div id="tabCon">
+           <div class="tab" id="childDiv"><%= t.include("partials/_child.html") %></div>
+           <div class="tab" id="mealsDiv"><%= t.include("partials/_meals.html") %></div>
+           <div class="tab" id="techDiv"><%= t.include("partials/_tech.html") %></div>
+           <div class="tab" id="learningDiv"><%= t.include("partials/_learning.html") %></div>
+         </div>
+       </div>
+
+       <figcaption>
+          <p class="data-source">Source: Office of Superintendent of Public Instruction</p>
+          <p class="art-credit">Lauren Flannery / The Seattle Times</p>
+        </figcaption>
+     </div>
+      <!-- content goes here -->
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>

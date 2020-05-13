@@ -27,4 +27,4 @@ $( ".header" ).click(function() {
 $('#tabCon').find(`#overviewDiv`).css("visibility","inherit");
 $('#overview').css("background-color","rgb(24, 161, 205)");
 var yay = $('#tabCon').find('#overviewDiv').height();
-$('figcaption').css('margin-top', (yay + 20));
+$('figcaption').css('margin-top', (yay + 30));
